@@ -1,5 +1,3 @@
-#lang racket
-(require rackunit)
 #|
 LAB 7
 KEVIN BOOKWALTER
@@ -29,7 +27,6 @@ PROBLEM 1
 (define (test2 x)
   x)
 
-(check-equal? (some-function=? test1 test2) #t)
 
 #|
 function=?: (Number -> Number) (Number -> Number) -> Boolean
@@ -67,17 +64,13 @@ PROBLEM 2
 
 (check-equal? (mini1 (list 1 2 3)) 1)
 (check-equal? (maxi1 (list 1 2 3)) 3)
+(check-expect (mini1 (list 1 2 3)) 1)
+(check-expect (maxi1 (list 1 2 3)) 3)
 
 (define LIST1 (list 3 7 6 2 9 8))
 (define LIST2 (list 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1))
 (define LIST3 (list 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22))
 
-(check-equal? (mini1 LIST1) 2)
-(check-equal? (mini1 LIST2) 1)
-(check-equal? (mini1 LIST3) 1)
-(check-equal? (maxi1 LIST1) 9)
-(check-equal? (maxi1 LIST2) 22)
-(check-equal? (maxi1 LIST3) 22)
 
 #|
 Each number must be compared to every number that follows it, meaning that extreme has to be called
